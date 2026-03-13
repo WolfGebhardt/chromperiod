@@ -2,7 +2,7 @@
 
 **Detecting periodic chromatin organization from accessibility data**
 
-chromperiod applies continuous wavelet transforms (CWT) to consecutive chromatin accessibility peaks — ordered by chromosomal position but stripped of inter-peak distance information — to reveal periodic compartmental organization across eukaryotic genomes.
+chromperiod applies continuous wavelet transforms (CWT) to consecutive chromatin accessibility peaks, ordered by chromosomal position but stripped of inter-peak distance information,to reveal periodic compartmental organization across eukaryotic genomes.
 
 This coordinate-independent representation performs a nonlinear compression of the genome that exposes multi-megabase periodic structure invisible to conventional coordinate-based analysis. The detected periodicity corresponds to Hi-C A/B compartments, is conserved from *Drosophila* to human, persists upon CTCF depletion, and is dynamically remodeled during stem cell differentiation.
 
