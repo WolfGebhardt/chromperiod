@@ -39,10 +39,10 @@ fig2.savefig('gws_chrX.png', dpi=150, bbox_inches='tight')
 
 ## Method
 
-The consecutive-peaks CWT treats the ordered sequence of chromatin accessibility peak scores as a time series and applies the continuous wavelet transform (CWT) using the Paul wavelet of order m=4, following Torrence & Compo (1998). Key features:
+The consecutive-peaks CWT treats the ordered sequence of chromatin accessibility peak scores as a time series and applies the continuous wavelet transform (CWT) using the Paul wavelet of order m=2, following Torrence & Compo (1998). Key features:
 
 - **Coordinate-free representation**: peaks are indexed by position in the genome, not by genomic coordinate. This removes the dominant source of autocorrelation (clustering of accessible sites in gene-rich regions) and exposes periodic fluctuations in chromatin state.
-- **Paul wavelet m=4**: provides good time-frequency localization with a well-defined Fourier period conversion factor (λ = 4π/(2m+1)).
+- **Paul wavelet m=2**: provides good time-frequency localization with a well-defined Fourier period conversion factor (λ = 4π/(2m+1)).
 - **AR1 red-noise significance**: analytical significance threshold based on the chi²(2) distribution (T&C eq. 18), with Monte Carlo permutation testing for non-parametric validation.
 - **No scale division**: power is normalized as |W_n(s)|²/σ² without dividing by scale, preserving the relative amplitude of oscillations at different periods.
 - **GWS-peak dominant period**: the dominant period is defined as the argmax of the global wavelet spectrum (time-averaged power outside the cone of influence).
@@ -54,7 +54,7 @@ The consecutive-peaks CWT treats the ordered sequence of chromatin accessibility
 | `peaks_file` | required | Path to narrowPeak/BED file or DataFrame |
 | `chromosome` | `None` | Chromosome to analyze (e.g. `'chrX'`). `None` = all peaks |
 | `wavelet` | `'paul'` | Wavelet type: `'paul'`, `'morlet'`, or `'dog'` |
-| `order` | `4` | Wavelet order (m=4 for Paul, ω₀=6 for Morlet, m=2 for DOG) |
+| `order` | `2` | Wavelet order (m=2 for Paul, ω₀=6 for Morlet, m=2 for DOG) |
 | `n_scales` | `80` | Number of log-spaced scales |
 | `period_min` | `10` | Minimum period in peak-index units |
 | `period_max` | `7000` | Maximum period in peak-index units |

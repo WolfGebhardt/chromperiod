@@ -26,7 +26,7 @@ from .utils import compute_coi, compute_coi_frac, estimate_ar1
 # Wavelet definitions
 # ---------------------------------------------------------------------------
 
-def _paul_psi_hat(s, omega, m=4):
+def _paul_psi_hat(s, omega, m=2):
     """
     Fourier transform of the Paul wavelet of order m (T&C eq. 6).
     psi_hat(s*omega) = (2^m / sqrt(m * (2m-1)!)) * H(omega) * (s*omega)^m * exp(-s*omega)
@@ -183,7 +183,7 @@ def consecutive_peaks_cwt(
     peaks_file,
     chromosome=None,
     wavelet='paul',
-    order=4,
+    order=2,
     n_scales=80,
     period_min=10,
     period_max=7000,
@@ -204,7 +204,7 @@ def consecutive_peaks_cwt(
     wavelet : str
         Wavelet type: 'paul', 'morlet', or 'dog'.
     order : int or float
-        Wavelet order. For Paul: m=4 (default). For Morlet: omega0=6.
+        Wavelet order. For Paul: m=2 (default). For Morlet: omega0=6.
         For DOG: m=2.
     n_scales : int
         Number of log-spaced scales (default 80).
@@ -408,7 +408,7 @@ def run_genome_wide_cwt(
     peaks_file,
     chromosomes=None,
     wavelet='paul',
-    order=4,
+    order=2,
     n_scales=80,
     period_min=10,
     period_max=7000,
