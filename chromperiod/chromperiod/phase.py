@@ -52,7 +52,7 @@ def reconstruct_bandpass(cwt_result, bandwidth_log10=0.15):
 
     # Reconstruct: sum real part of CWT coefficients over band scales
     # Normalization: delta_j * delta_t^0.5 / (C_delta * psi_0(0))
-    # For Paul m=4: C_delta = 1.132, psi_0(0) = 1.0 (T&C Table 2)
+    # For Paul m=2: C_delta ~ 1.132 (T&C Table 2 approximation); affects amplitude, not phase
     # We use a simplified reconstruction: sum of real(W_n(s)) / sqrt(s)
     # This is proportional to the true reconstruction and preserves phase.
 
@@ -81,7 +81,7 @@ def reconstruct_bandpass(cwt_result, bandwidth_log10=0.15):
     return reconstructed
 
 
-def reconstruct_bandpass_full(signal, scales, periods, wavelet='paul', order=4,
+def reconstruct_bandpass_full(signal, scales, periods, wavelet='paul', order=2,
                                dominant_period=None, bandwidth_log10=0.15):
     """
     Full band-pass reconstruction using the CWT coefficients directly.
@@ -144,8 +144,8 @@ def reconstruct_bandpass_full(signal, scales, periods, wavelet='paul', order=4,
         # T&C eq. 11: reconstruction sum
         reconstructed += W_n / np.sqrt(s)
 
-    # T&C reconstruction normalization (Paul m=4: C_delta=1.132, psi_0(0)=1)
-    C_delta = 1.132  # Paul m=4
+    # T&C reconstruction normalization (C_delta=1.132 approximate; phase-only use)
+    C_delta = 1.132  # approximate; affects amplitude normalization only, not phase
     psi_0 = 1.0
     reconstructed = (delta_j * np.sqrt(1.0) / (C_delta * psi_0)) * np.real(reconstructed)
 

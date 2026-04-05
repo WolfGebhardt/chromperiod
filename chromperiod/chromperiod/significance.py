@@ -189,7 +189,7 @@ def white_noise_false_positive_rate(
     n_signals=100,
     n_peaks=8082,
     wavelet='paul',
-    order=4,
+    order=2,
     n_scales=80,
     period_min=10,
     period_max=7000,
