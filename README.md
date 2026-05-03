@@ -1,146 +1,84 @@
 # chromperiod
 
-**Detecting periodic chromatin organization from accessibility data**
+**Detecting periodic radial geometry of eukaryotic chromosomes from accessibility data.**
 
-chromperiod applies continuous wavelet transforms (CWT) to consecutive chromatin accessibility peaks, ordered by chromosomal position but stripped of inter-peak distance information,to reveal periodic compartmental organization across eukaryotic genomes.
+`chromperiod` is a Python package implementing the consecutive-peak continuous wavelet transform (CWT) analysis pipeline that reveals a conserved supra-compartment radial fold of eukaryotic chromosomes. The method takes standard DNase-seq, ATAC-seq, or H3K4me3 ChIP-seq narrowPeak files as input and returns the dominant period, sig95 spectral concentration, and per-bin wavelet phase, with no requirement for chromosome conformation capture (Hi-C) data.
 
-This coordinate-independent representation performs a nonlinear compression of the genome that exposes multi-megabase periodic structure invisible to conventional coordinate-based analysis. The detected periodicity corresponds to Hi-C A/B compartments, is conserved from *Drosophila* to human, persists upon CTCF depletion, and is dynamically remodeled during stem cell differentiation.
-
-## Key Findings
-
-- **Genome-wide periodicity** across all human (23), mouse (20), and *Drosophila* (5) chromosomes
-- **Hi-C compartment concordance**: Fisher's OR = 10.88 on human chrX (21/23 chromosomes genome-wide)
-- **Cross-species conservation**: comparable periodicity in organisms separated by ~800 million years of evolution
-- **CTCF-independent**: periodicity persists in *Drosophila* (no CTCF-dependent loops) and after CTCF depletion in human cells
-- **Developmentally dynamic**: 2.7-fold period increase during H7 hESC cardiac differentiation
+The central observation, established across 71 chromosomes in human, mouse, chicken, and *Drosophila*, is that wavelength scales with chromosome length as **T ∝ L^0.83**, and that each chromosome traces approximately **N ≈ 5** radial excursions between nuclear speckles and the lamina, regardless of size. Wavelet phase predicts radial nuclear position by TSA-seq with R² = 0.90, and the relationship is preserved at single-cell resolution in 240/240 mouse cortical neurons (Dip-C), 14/14 GM12878 nuclei (Dip-C 3D structures), and 1,787 IMR-90 nuclei (MERFISH chromatin tracing).
 
 ## Installation
 
 ```bash
-# From source
-git clone https://github.com/wolfgebhardt/chromperiod.git
-cd chromperiod
-pip install -e .
-
-# Or directly
-pip install git+https://github.com/wolfgebhardt/chromperiod.git
+pip install chromperiod
 ```
 
-**Requirements:** Python ≥ 3.8, numpy ≥ 1.21, scipy ≥ 1.7, matplotlib ≥ 3.5, pandas ≥ 1.3
+Or from source:
 
-No external wavelet libraries are required — the CWT is implemented from scratch following Torrence & Compo (1998).
+```bash
+git clone https://github.com/WolfGebhardt/chromperiod
+cd chromperiod
+pip install -e .
+```
 
-## Quickstart
+## Quick start
 
 ```python
 from chromperiod import consecutive_peaks_cwt
-from chromperiod.plotting import plot_scalogram, plot_gws
 
-# Run CWT on a narrowPeak file
-result = consecutive_peaks_cwt("peaks.narrowPeak", chromosome="chrX")
+# Run CWT on one chromosome from a narrowPeak file
+result = consecutive_peaks_cwt('K562_DNase.narrowPeak', chromosome='chrX')
+print(result)
+# CWTResult(chrom=chrX, n_peaks=8082, dominant_period=28.4 Mbp, sig95=39.4%, ar1=0.150)
 
-# Print key metrics
-print(f"Dominant period: {result.dominant_period:.0f} peaks ({result.dominant_period_mbp:.1f} Mbp)")
-print(f"sig95: {result.sig95:.1%}")
-print(f"AR1 alpha: {result.ar1_alpha:.3f}")
-print(f"COI-accessible fraction: {result.coi_frac:.3f}")
-
-# Generate publication-quality figures
-plot_scalogram(result, output="scalogram.png")
-plot_gws(result, output="gws.png")
+# Genome-wide
+from chromperiod import run_genome_wide_cwt
+results = run_genome_wide_cwt('K562_DNase.narrowPeak')
+for r in results:
+    print(f'{r.chrom}: T={r.dominant_period:.1f} Mbp, sig95={r.sig95:.1%}')
 ```
-
-## What It Does
-
-1. **Parses** chromatin accessibility peaks from narrowPeak (DNase-seq, ATAC-seq, ChIP-seq) or Hotspot3 BED files
-2. **Orders** peaks consecutively by genomic position, using signal values as the analysis signal
-3. **Applies** the continuous wavelet transform (Paul wavelet m=4 by default; Morlet and DOG also supported)
-4. **Tests** significance against an AR1 red-noise null model (χ² test, 95% confidence) and optionally by Monte Carlo permutation
-5. **Classifies** peaks by wavelet phase (high-phase vs. low-phase) at the dominant period band
-6. **Computes** compartment concordance when Hi-C eigenvector data is provided
-7. **Measures** A/B run lengths as a wavelet-independent periodicity estimate
-
-## Parameters
-
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| `wavelet` | `'paul'` | Wavelet family: `'paul'`, `'morlet'`, or `'dog'` |
-| `order` | `4` | Wavelet order (m=4 for Paul, ω₀=6 for Morlet, m=2 for DOG) |
-| `n_scales` | `80` | Number of log-spaced scales |
-| `period_min` | `10` | Minimum period in peak-index units |
-| `period_max` | `7000` | Maximum period in peak-index units |
-| `significance_level` | `0.95` | AR1 red-noise significance level |
-| `signal_column` | `'signalValue'` | Column name or index for the analysis signal |
 
 ## Method
 
-The analysis follows Torrence & Compo (1998) exactly:
+The pipeline applies a complex Paul wavelet (m=2) to the consecutive sequence of accessibility peak signal values, ordered by genomic position, with inter-peak distances discarded. This coordinate change suppresses the spacing-distance autocorrelation that masks supra-compartment periodicity in standard Hi-C-eigenvector and bin-based analyses, and reveals an orderly periodic pattern in the chromosome's accessible-chromatin surface chain.
 
-- **CWT computation**: FFT convolution (T&C eq. 4)
-- **Power**: |W_n(s)|² / σ² — no division by scale
-- **Significance**: χ²(2) test against AR1 red-noise background (T&C eq. 18)
-- **Cone of influence**: √2 · λ · δt · min(n, N−n) (T&C eq. 25)
-- **Dominant period**: argmax of global wavelet spectrum (mean power outside COI)
-- **Phase reconstruction**: band-pass filtered real part of CWT coefficients (T&C eq. 11)
+For an extended introduction to the rationale (the "consecutive-peak coordinate" change, the surface-vs-bulk reading, the connection to the active-nuclear-compartment / inactive-nuclear-compartment framework), see the manuscript citation below.
 
-The key innovation is the **consecutive-peak representation**: peaks are analyzed in their sequential genomic order with inter-peak distances discarded. This nonlinear compression collapses inactive chromatin regions and amplifies periodic fluctuations in chromatin state that are masked in coordinate space.
+## Output
 
-## Additional Tools
+Each `CWTResult` provides:
 
-```python
-from chromperiod.significance import permutation_test
-from chromperiod.phase import classify_phases, run_length_analysis
-from chromperiod.plotting import plot_triple_comparison
+- `chrom`: chromosome identifier
+- `n_peaks`: peak count after filtering
+- `dominant_period`: dominant period in megabase pairs (Mbp)
+- `sig95`: fraction of global wavelet spectrum power above the AR(1) red-noise null
+- `ar1`: lag-1 autocorrelation of the input series
+- `cwt_phase`: per-bin wavelet phase (unwrapped)
+- `cwt_amplitude`: per-bin wavelet amplitude at the dominant period
 
-# Monte Carlo permutation testing (1000 surrogates, BH FDR correction)
-perm_result = permutation_test(result, n_surrogates=1000, seed=42)
+## Reproducibility
 
-# Phase classification at dominant period band
-phases = classify_phases(result, threshold_sd=0.5)
+The full analysis pipeline that produced the results in the accompanying manuscript is provided as a self-contained submission bundle. The chromperiod canonical 500-kb pipeline is in `05_code/figure_regen/` of the bundle; per-figure data sources, phase maps for K562, GM12878, HCT116, MCF-7, and IMR-90 in hg38 and hg19, and per-figure regeneration scripts are all included. Reviewer-runnable Tier-1 figures reproduce every quantitative caption claim from real data.
 
-# Wavelet-independent run-length analysis (requires PC1 values)
-runs = run_length_analysis(peaks_df, pc1_column='PC1')
-
-# Triple comparison: consecutive vs. randomized vs. linear interpolation
-plot_triple_comparison("peaks.narrowPeak", chromosome="chrX", output="triple.png")
-```
-
-## Example Data
-
-The manuscript analyses use publicly available ENCODE data. To reproduce the primary result (MCF-7 chrX):
-
-```bash
-# Download MCF-7 DNase-seq narrowPeak from ENCODE
-wget https://www.encodeproject.org/files/ENCFF250GOB/@@download/ENCFF250GOB.bed.gz
-gunzip ENCFF250GOB.bed.gz
-```
-
-```python
-result = consecutive_peaks_cwt("ENCFF250GOB.bed", chromosome="chrX")
-# Expected: dominant period ~28 Mbp, sig95 ~39%, AR1 ~0.15
-```
-
-## Tests
-
-```bash
-python -m pytest tests/ -v
-```
-
-31 tests covering: white noise false positive rates, sine wave period recovery, randomization controls, wavelet family consistency, AR1 estimation accuracy, BH FDR correction, and Phipson-Smyth p-value validity.
+A rebuttal-prep package with seven additional analyses (peak-threshold robustness, ΔR² of CWT phase beyond Hi-C PC1, amplitude collapse across nested scales, jack-knife of the cross-species exponent, peak-density artifact discriminator, chromosome-territory confound test, and density-only CWT control) is included in `05_code/rebuttal_prep/` of the same bundle.
 
 ## Citation
 
-```
-Gebhardt WH (2026) Consecutive chromatin accessibility peaks reveal periodic
-compartmental organization of eukaryotic chromosomes. bioRxiv [DOI to be added]
-```
+If you use chromperiod or the consecutive-peak CWT pipeline in your work, please cite:
+
+> Gebhardt, W. H. (2026). **A scaling law of periodic radial geometry organises eukaryotic chromosomes.** Submitted to *Nature*, May 2026. Preprint forthcoming on Research Square (Springer Nature In Review).
+
+A `CITATION.cff` file is provided in the repository root for GitHub's citation widget.
 
 ## License
 
-MIT License. Copyright (c) 2026 Wolf H. Gebhardt.
+MIT — see [LICENSE](LICENSE) for full text.
 
-## References
+## Author
 
-- Torrence C, Compo GP (1998) A practical guide to wavelet analysis. *Bull Am Meteorol Soc* 79:61–78.
-- Owen JA, Osmanović D, Mirny LA (2023) Design principles of 3D epigenetic memory systems. *Science* 382:eadg3053.
-- Lieberman-Aiden E et al. (2009) Comprehensive mapping of long-range interactions reveals folding principles of the human genome. *Science* 326:289–293.
+Wolf Henning Gebhardt, Independent Researcher, Bad Homburg, Germany.
+ORCID: [0000-0003-2091-1437](https://orcid.org/0000-0003-2091-1437)
+Correspondence: w.gebhardt@protonmail.com
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for a full version history.

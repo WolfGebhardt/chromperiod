@@ -26,11 +26,12 @@ References
 Torrence C, Compo GP (1998) A practical guide to wavelet analysis.
     Bull Am Meteorol Soc 79(1):61-78.
 
-Gebhardt WH (2026) Consecutive chromatin accessibility peaks reveal periodic
-    compartmental organization of eukaryotic chromosomes. bioRxiv.
+Gebhardt WH (2026) A scaling law of periodic radial geometry organises
+    eukaryotic chromosomes. Submitted to Nature, May 2026; preprint on
+    Research Square (Springer Nature In Review service).
 """
 
-__version__ = '0.1.0'
+__version__ = '1.0.0'
 __author__ = 'Wolf H. Gebhardt'
 __email__ = 'w.gebhardt@protonmail.com'
 __license__ = 'MIT'
