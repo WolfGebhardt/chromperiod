@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+title: "chromperiod: Detecting periodic chromatin organization from accessibility data"
+message: "If you use this software, please cite the accompanying manuscript."
+type: software
+authors:
+  - given-names: "Wolf Henning"
+    family-names: "Gebhardt"
+    email: "w.gebhardt@protonmail.com"
+    orcid: "https://orcid.org/0000-0003-2091-1437"
+    affiliation: "Independent Researcher, Bad Homburg, Germany"
+repository-code: "https://github.com/WolfGebhardt/chromperiod"
+license: MIT
+version: "1.0.0"
+date-released: "2026-05-03"
+keywords:
+  - chromatin
+  - wavelet
+  - continuous wavelet transform
+  - DNase-seq
+  - ATAC-seq
+  - A/B compartments
+  - Hi-C
+  - periodicity
+  - genomics
+  - nuclear organization
+  - chromosome architecture
+preferred-citation:
+  type: article
+  title: "A scaling law of periodic radial geometry organises eukaryotic chromosomes"
+  authors:
+    - given-names: "Wolf Henning"
+      family-names: "Gebhardt"
+      email: "w.gebhardt@protonmail.com"
+      orcid: "https://orcid.org/0000-0003-2091-1437"
+      affiliation: "Independent Researcher, Bad Homburg, Germany"
+  year: 2026
+  notes: "Submitted to Nature, May 2026. Preprint on Research Square (Springer Nature In Review)."
