@@ -57,15 +57,15 @@ Each `CWTResult` provides:
 
 ## Reproducibility
 
-The full analysis pipeline that produced the results in the accompanying manuscript is provided as a self-contained submission bundle. The chromperiod canonical 500-kb pipeline is in `05_code/figure_regen/` of the bundle; per-figure data sources, phase maps for K562, GM12878, HCT116, MCF-7, and IMR-90 in hg38 and hg19, and per-figure regeneration scripts are all included. Reviewer-runnable Tier-1 figures reproduce every quantitative caption claim from real data.
+A self-contained submission bundle accompanies the manuscript. It includes the chromperiod canonical 500-kb pipeline, per-figure data sources, phase maps for K562, GM12878, HCT116, MCF-7, and IMR-90 in hg38 and hg19, and per-figure regeneration scripts. The bundle is provided to editors and reviewers as supplementary material and will be deposited publicly upon acceptance.
 
-A rebuttal-prep package with seven additional analyses (peak-threshold robustness, ΔR² of CWT phase beyond Hi-C PC1, amplitude collapse across nested scales, jack-knife of the cross-species exponent, peak-density artifact discriminator, chromosome-territory confound test, and density-only CWT control) is included in `05_code/rebuttal_prep/` of the same bundle.
+This repository contains the core library; the submission bundle is a separate supplement.
 
 ## Citation
 
 If you use chromperiod or the consecutive-peak CWT pipeline in your work, please cite:
 
-> Gebhardt, W. H. (2026). **A scaling law of periodic radial geometry organises eukaryotic chromosomes.** Submitted to *Nature*, May 2026. Preprint forthcoming on Research Square (Springer Nature In Review).
+> Gebhardt, W. H. (2026). **Periodic supra-compartment organisation of eukaryotic chromosomes.** Submitted to *Nature*.
 
 A `CITATION.cff` file is provided in the repository root for GitHub's citation widget.
 

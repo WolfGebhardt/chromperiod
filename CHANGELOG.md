@@ -5,9 +5,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [1.0.0] - 2026-05-03
 
-First production-stable release, coinciding with submission of the accompanying manuscript to *Nature* (tracking number 2026-05-13187, May 3, 2026):
+First production-stable release, accompanying submission of the manuscript to *Nature*:
 
-> Gebhardt, W. H. (2026). A scaling law of periodic radial geometry organises eukaryotic chromosomes.
+> Gebhardt, W. H. (2026). Periodic supra-compartment organisation of eukaryotic chromosomes.
 
 ### Added
 
