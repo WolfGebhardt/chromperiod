@@ -9,9 +9,9 @@ authors:
     orcid: "https://orcid.org/0000-0003-2091-1437"
     affiliation: "Independent Researcher, Bad Homburg, Germany"
 repository-code: "https://github.com/WolfGebhardt/chromperiod"
-license: MIT
-version: "1.0.0"
-date-released: "2026-05-03"
+license-url: "https://github.com/WolfGebhardt/chromperiod/blob/main/LICENSE"
+version: "1.0.1"
+date-released: "2026-05-04"
 keywords:
   - chromatin
   - wavelet
@@ -33,6 +33,6 @@ preferred-citation:
       email: "w.gebhardt@protonmail.com"
       orcid: "https://orcid.org/0000-0003-2091-1437"
       affiliation: "Independent Researcher, Bad Homburg, Germany"
-  year: 2026
   journal: "Nature"
+  year: 2026
   notes: "Submitted 2026."

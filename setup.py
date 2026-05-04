@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='chromperiod',
-    version='1.0.0',
+    version='1.0.1',
     description='Detecting periodic chromatin organization from accessibility data',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
@@ -21,12 +21,13 @@ setup(
         'full': ['seaborn>=0.11', 'pyBigWig'],
     },
     python_requires='>=3.8',
-    license='MIT',
+    license='chromperiod Research and Non-Commercial Use License v1.0 (see LICENSE)',
+    license_files=('LICENSE', 'PATENT_NOTICE.md'),
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Science/Research',
         'Topic :: Scientific/Engineering :: Bio-Informatics',
-        'License :: OSI Approved :: MIT License',
+        'License :: Other/Proprietary License',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',

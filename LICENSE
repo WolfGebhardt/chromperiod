@@ -1,21 +1,128 @@
-MIT License
+chromperiod Research and Non-Commercial Use License
+Version 1.0, May 2026
 
-Copyright (c) 2026 Wolf H. Gebhardt
+Copyright (c) 2026 Wolf Henning Gebhardt. All rights reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This license governs use of the accompanying software and associated
+documentation (collectively, "the Software"). By using, copying, modifying,
+or distributing the Software, you accept this license. If you do not accept
+the license, you are not permitted to use the Software.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. PERMITTED USE
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+   Subject to the terms below, the copyright holder grants you a worldwide,
+   royalty-free, non-exclusive, non-transferable license to use, copy,
+   modify, and distribute the Software for the following purposes only
+   ("Permitted Use"):
+
+   (a) Personal use by an individual that is not for or on behalf of any
+       commercial entity.
+
+   (b) Use by a non-profit academic or research institution for academic
+       teaching, internal academic research, and the publication of academic
+       research results in peer-reviewed venues, provided the use is not
+       performed for or on behalf of a commercial entity and does not
+       generate revenue.
+
+   (c) Use by a government agency for non-commercial public-interest
+       research, subject to the same conditions.
+
+   (d) Use for the sole purpose of evaluating the Software for potential
+       commercial licensing, for a period not exceeding 90 days.
+
+2. PROHIBITED USE WITHOUT SEPARATE COMMERCIAL LICENSE
+
+   Without prior written permission from the copyright holder, you may NOT:
+
+   (a) Use the Software, or any derivative work of the Software, in or as
+       part of a commercial product, service, or pipeline. This includes,
+       without limitation, any clinical diagnostic product, drug-discovery
+       pipeline, cell- or gene-therapy product or quality-control system,
+       biomarker-based test, software-as-a-service offering, or paid
+       analytical service.
+
+   (b) Use the Software in or for the benefit of any for-profit entity,
+       except for the limited evaluation use described in Section 1(d).
+
+   (c) Sublicense, sell, lease, or otherwise transfer the Software for
+       monetary or other consideration.
+
+   (d) Use the Software in connection with the provision of regulated
+       healthcare services or medical decision-making.
+
+   For commercial licensing inquiries, including any of the uses listed
+   above, contact: w.gebhardt@protonmail.com
+
+3. PATENT NOTICE
+
+   The methods implemented in the Software are the subject of a Swiss
+   patent application filed 4 May 2026 by Wolf Henning Gebhardt (sole
+   inventor). An international (PCT) application is planned within the
+   12-month priority window. National-phase applications in the European
+   Patent Office, the United States, and other jurisdictions are
+   contemplated.
+
+   THIS LICENSE GRANTS NO EXPRESS OR IMPLIED PATENT RIGHTS BEYOND THOSE
+   STRICTLY NECESSARY TO PERFORM THE PERMITTED USE DEFINED IN SECTION 1.
+   Use of the Software for purposes that fall outside Section 1 without
+   a separate commercial license, including any of the uses listed in
+   Section 2, may infringe one or more patent claims. The copyright
+   holder reserves all patent rights.
+
+4. ATTRIBUTION
+
+   Any distribution, redistribution, or modification of the Software, or
+   any publication describing results obtained using the Software, must:
+
+   (a) Retain this license and the copyright notice in all copies and
+       substantial portions of the Software.
+
+   (b) Cite the accompanying manuscript as described in CITATION.cff.
+
+   (c) State clearly that the Software is provided under the chromperiod
+       Research and Non-Commercial Use License and that commercial use
+       requires a separate license.
+
+5. NO ENDORSEMENT
+
+   The name of the copyright holder, the name "chromperiod", and any
+   associated marks may not be used to endorse or promote derivative
+   works or third-party products without prior written permission.
+
+6. NO WARRANTY
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+   OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT,
+   ACCURACY, AND ABSENCE OF ERRORS. THE SOFTWARE IS NOT INTENDED FOR USE
+   IN ANY CLINICAL, DIAGNOSTIC, OR REGULATED MEDICAL APPLICATION.
+
+7. LIMITATION OF LIABILITY
+
+   IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY DIRECT,
+   INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+   (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+   SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+   OF THE POSSIBILITY OF SUCH DAMAGE.
+
+8. TERMINATION
+
+   This license terminates automatically if you violate any of its terms.
+   Upon termination, you must stop using the Software and destroy all
+   copies in your possession.
+
+9. GOVERNING LAW
+
+   This license is governed by the substantive laws of Switzerland,
+   without regard to its conflict-of-laws rules. The exclusive forum for
+   any dispute arising from this license is the competent courts of
+   Switzerland.
+
+10. SEVERABILITY
+
+    If any provision of this license is held to be unenforceable, the
+    remaining provisions shall remain in full force and effect.
+
+For commercial licensing, including diagnostic, therapeutic, or
+software-as-a-service applications, contact w.gebhardt@protonmail.com.

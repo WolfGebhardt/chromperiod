@@ -30,10 +30,10 @@ Gebhardt WH (2026) Periodic supra-compartment organisation of eukaryotic
     chromosomes. Submitted to Nature.
 """
 
-__version__ = '1.0.0'
-__author__ = 'Wolf H. Gebhardt'
+__version__ = '1.0.1'
+__author__ = 'Wolf Henning Gebhardt'
 __email__ = 'w.gebhardt@protonmail.com'
-__license__ = 'MIT'
+__license__ = 'chromperiod Research and Non-Commercial Use License v1.0'
 
 from .cwt import consecutive_peaks_cwt, run_genome_wide_cwt, CWTResult
 from .io import load_peaks

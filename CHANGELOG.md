@@ -3,6 +3,24 @@
 All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.0.1] - 2026-05-04
+
+Public-release relicensing in coordination with Swiss patent filing.
+
+### Changed
+
+- **License changed from MIT to chromperiod Research and Non-Commercial Use License v1.0.** The MIT license was appropriate while the repository was private; the new license reflects the public-release status and the patent strategy. See [LICENSE](LICENSE) for full text.
+- README updated with prominent patent notice block and revised License section.
+- Author affiliation standardised in `setup.py` and `CITATION.cff` to "Independent Researcher, Bad Homburg, Germany".
+
+### Added
+
+- `PATENT_NOTICE.md` — complete patent disclosure: Swiss application (filed 4 May 2026, IGE/IPI Bern, sole inventor Wolf Henning Gebhardt), planned PCT and national-phase filings, scope of methods covered, what use is permitted under the LICENSE, and how to obtain a commercial license.
+
+### Note for users
+
+Users who relied on the prior 1.0.0 MIT release in any commercial context before 4 May 2026 should contact w.gebhardt@protonmail.com to discuss licensing. Use under the prior MIT release remains governed by the prior license for the period during which it was in effect; new use, redistribution, or modification of code obtained on or after 4 May 2026 is governed by the new license.
+
 ## [1.0.0] - 2026-05-03
 
 First production-stable release, accompanying submission of the manuscript to *Nature*:
