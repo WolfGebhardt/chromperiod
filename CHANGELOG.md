@@ -25,7 +25,7 @@ Users who relied on the prior 1.0.0 MIT release in any commercial context before
 
 First production-stable release, accompanying submission of the manuscript to *Nature*:
 
-> Gebhardt, W. H. (2026). Periodic supra-compartment organisation of eukaryotic chromosomes.
+> Gebhardt, W. H. (2026). A scaling law of periodic radial geometry organises eukaryotic chromosomes.
 
 ### Added
 

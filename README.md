@@ -67,7 +67,7 @@ This repository contains the core library; the submission bundle is a separate s
 
 If you use chromperiod or the consecutive-peak CWT pipeline in your work, please cite:
 
-> Gebhardt, W. H. (2026). **Periodic supra-compartment organisation of eukaryotic chromosomes.** Submitted to *Nature*.
+> Gebhardt, W. H. (2026). **A scaling law of periodic radial geometry organises eukaryotic chromosomes.** Submitted to *Nature*.
 
 A `CITATION.cff` file is provided in the repository root for GitHub's citation widget.
 
