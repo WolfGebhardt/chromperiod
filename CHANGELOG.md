@@ -15,17 +15,17 @@ Public-release relicensing in coordination with Swiss patent filing.
 
 ### Added
 
-- `PATENT_NOTICE.md` — complete patent disclosure: Swiss application (filed 4 May 2026, IGE/IPI Bern, sole inventor Wolf Henning Gebhardt), planned PCT and national-phase filings, scope of methods covered, what use is permitted under the LICENSE, and how to obtain a commercial license.
+- `PATENT_NOTICE.md` — complete patent disclosure: Swiss application (filed 3 May 2026, IGE/IPI Bern, sole inventor Wolf Henning Gebhardt), planned PCT and national-phase filings, scope of methods covered, what use is permitted under the LICENSE, and how to obtain a commercial license.
 
 ### Note for users
 
-Users who relied on the prior 1.0.0 MIT release in any commercial context before 4 May 2026 should contact w.gebhardt@protonmail.com to discuss licensing. Use under the prior MIT release remains governed by the prior license for the period during which it was in effect; new use, redistribution, or modification of code obtained on or after 4 May 2026 is governed by the new license.
+Users who relied on the prior 1.0.0 MIT release in any commercial context before 3 May 2026 should contact w.gebhardt@protonmail.com to discuss licensing. Use under the prior MIT release remains governed by the prior license for the period during which it was in effect; new use, redistribution, or modification of code obtained on or after 3 May 2026 is governed by the new license.
 
 ## [1.0.0] - 2026-05-03
 
-First production-stable release, accompanying submission of the manuscript to *Nature*:
+First production-stable release, accompanying submission of the manuscript:
 
-> Gebhardt, W. H. (2026). A scaling law of periodic radial geometry organises eukaryotic chromosomes.
+> Gebhardt, W. H. (2026). A periodic supra-compartment fold maps chromosomes to nuclear environments and constrains genomic rearrangement.
 
 ### Added
 

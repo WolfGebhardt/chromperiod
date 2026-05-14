@@ -6,7 +6,7 @@ This document describes the use of artificial-intelligence tools, including larg
 
 The consecutive-peak continuous wavelet transform method that underlies this software, and the scientific findings reported in the accompanying manuscript, were conceived and developed by Wolf Henning Gebhardt. Conception traces to the inventor's independent work between approximately 2014 and 2017 at the Institute of Molecular Biology (IMB), Mainz, and predates the broad availability of large-language-model AI tools (ChatGPT public release November 2022; comparable foundation models available 2023+). Contemporaneous notes, software files, and correspondence from that period are retained by the inventor as evidence of independent prior conception. The 2026 manuscript and patent filing develop the initial observation into a quantitative, cross-species, mechanism-linked phenomenon.
 
-**Wolf Henning Gebhardt is the sole inventor of the methods claimed in the Swiss patent application filed 4 May 2026 (and any subsequent PCT and national-phase filings tracing priority to that application). Wolf Henning Gebhardt is the sole author of the accompanying manuscript.**
+**Wolf Henning Gebhardt is the sole inventor of the methods claimed in the Swiss patent application filed 3 May 2026 (and any subsequent PCT and national-phase filings tracing priority to that application). Wolf Henning Gebhardt is the sole author of the accompanying manuscript.**
 
 ## How AI tools have been used
 

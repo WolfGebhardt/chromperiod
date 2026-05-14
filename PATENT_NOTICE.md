@@ -1,6 +1,6 @@
 # Patent Notice
 
-The methods implemented in this repository are the subject of a pending Swiss patent application filed 4 May 2026 by Wolf Henning Gebhardt (sole inventor) at the Swiss Federal Institute of Intellectual Property (IPI / IGE), Bern. A PCT international application is planned within the 12-month priority window, with national-phase entry contemplated in the European Patent Office, the United States, and other jurisdictions.
+The methods implemented in this repository are the subject of a pending Swiss patent application filed 3 May 2026 by Wolf Henning Gebhardt (sole inventor) at the Swiss Federal Institute of Intellectual Property (IPI / IGE), Bern. A PCT international application is planned within the 12-month priority window, with national-phase entry contemplated in the European Patent Office, the United States, and other jurisdictions.
 
 ## Scope
 

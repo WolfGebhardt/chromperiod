@@ -26,8 +26,8 @@ References
 Torrence C, Compo GP (1998) A practical guide to wavelet analysis.
     Bull Am Meteorol Soc 79(1):61-78.
 
-Gebhardt WH (2026) A scaling law of periodic radial geometry organises
-    eukaryotic chromosomes. Submitted to Nature.
+Gebhardt WH (2026) A periodic supra-compartment fold maps chromosomes
+    to nuclear environments and constrains genomic rearrangement.
 """
 
 __version__ = '1.0.1'
